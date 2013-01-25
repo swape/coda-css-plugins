@@ -36,6 +36,7 @@ function doThings($input){
 	$input = str_replace(" ,", ",", $input);
 	
 	$input = str_replace("}", "}\n", $input);
+	$input = str_replace("*/", "*/\n", $input);
 	
 	return $input;
 }

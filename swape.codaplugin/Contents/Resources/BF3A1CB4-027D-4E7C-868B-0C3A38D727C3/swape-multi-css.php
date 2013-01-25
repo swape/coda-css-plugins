@@ -9,7 +9,6 @@ while ( $line = fgets($fp, 1024) )
 	
 fclose($fp);
 
-//$input = doThings($input);
 $input =  doThings($input);
 $input =  otherThings($input);
 echo $input;
@@ -36,8 +35,15 @@ function otherThings($input){
 	$input = str_replace('}', "\n}", $input);
 	$input = str_replace(';', ";\n\t", $input);
 	$input = str_replace('{', "{\n\t", $input);
+ 	$input = str_replace('*/', "*/\n", $input); 
+ 	$input = str_replace('@', "\n@", $input); 
+ 	$input = str_replace('\n\n', "\n", $input);
+ 	$input = str_replace('\t/*', "/*", $input);
 	return $input;	
 }
+
+
+
 
 
 
